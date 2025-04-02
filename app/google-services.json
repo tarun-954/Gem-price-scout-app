@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320967023860",
+    "project_id": "gem-price-scout",
+    "storage_bucket": "gem-price-scout.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320967023860:android:ed9891f1e9256ee29992a1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS5Z9XThTODb3BnheGkJsHdDBVCSU5z-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,7 +18,7 @@ class logopage : AppCompatActivity() {
             insets
         }
         android.os.Handler().postDelayed({
-            var i= Intent(this@logopage,signup::class.java)
+            var i= Intent(this@logopage,SignupActivity::class.java)
             startActivity(i)
             finish()
         },3000)
