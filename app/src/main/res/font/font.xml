@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/qwitchergrypenbold" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="400"
+        android:font="@font/qwitchergrypenregular" />
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/loralbuttonfont" />
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/interitalic" />
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/intersimple" />
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/loralnew" />
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/loralitalic" />
+
+    <font
+        android:fontStyle="normal"
+
+        android:fontWeight="400"
+        android:font="@font/poppinseegular" />
+
+</font-family>
