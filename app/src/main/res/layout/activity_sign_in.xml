@@ -122,14 +122,6 @@
 
     <!-- Google Sign-In Button -->
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/google_sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -138,7 +130,7 @@
         android:layout_marginTop="48dp"
         android:background="@drawable/circular_background"
         android:fontFamily="@font/poppinsblack"
-        android:text="Sign up"
+        android:text="Sign In"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -147,4 +139,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
+
+
+<!--    sign in button with google-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/googleSignInButton"
+        android:layout_width="293dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="56dp"
+        android:allCaps="false"
+        android:background="@drawable/button_background"
+        android:drawableLeft="@drawable/fingerprint_dialog_fp_icon"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="Continue with Google"
+        android:textColor="#5F6368"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
