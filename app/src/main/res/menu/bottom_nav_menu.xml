@@ -1,26 +1,20 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-    <!-- The middle button (home) is handled by FAB instead of a menu item -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_fav"
-        android:icon="@drawable/fav2"
-        android:name="com.example.myapplication.ui.fav.FavFragment"
-        android:title="Favourites"/>
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Gallery"
+        android:background="@drawable/nav_item_background" />
 
     <item
-        android:id="@+id/nav_trends"
-        android:icon="@drawable/trends"
-        android:name="com.example.myapplication.ui.trends.TrendsFragment"
-        android:title="Trend"/>
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home"
+        android:background="@drawable/nav_item_background" />
 
     <item
-        android:id="@+id/nav_cart"
-        android:icon="@drawable/cartheart"
-        android:name="com.example.myapplication.ui.cart.CartFragment"
-        android:title="Cart"/>
-
-
+        android:id="@+id/nav_slideshow"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Slideshow"
+        android:background="@drawable/nav_item_background" />
 </menu>
