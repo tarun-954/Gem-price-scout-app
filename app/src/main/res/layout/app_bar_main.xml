@@ -30,6 +30,7 @@
   android:layout_gravity="bottom|end"
       android:layout_marginEnd="10dp"
   android:layout_marginBottom="75dp"
+      android:contentDescription="Notifications"
   app:srcCompat="@android:drawable/ic_dialog_email" />
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>

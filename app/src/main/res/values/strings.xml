@@ -11,4 +11,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="search_product_or_paste_link">Search product or paste link</string>
+    <string name="track_product">Track Product</string>
+    <string name="price_history_and_tracker">Price History and Tracker</string>
+    <string name="supports_all_major_e_commerce_platforms_in_india">Supports all major e-commerce platforms in India</string>
 </resources>

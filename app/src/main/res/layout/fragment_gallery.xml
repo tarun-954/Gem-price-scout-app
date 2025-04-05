@@ -7,17 +7,73 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment" >
 
-    <TextView
-        android:id="@+id/text_gallery"
+
+    <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/productSearchLayout"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|center"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="45dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_history_and_tracker"
+            android:textSize="27dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppinsblack"
+            >
+
+        </TextView>
+        <EditText
+            android:id="@+id/editTextProductSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_product_or_paste_link"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:background="@drawable/rounded_edittext_bg"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            />
+
+        <Button
+            android:id="@+id/btnTrackProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/track_product" />
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_gravity="center"
+            android:text="@string/supports_all_major_e_commerce_platforms_in_india"
+            android:textSize="16sp">
+
+        </TextView>
+
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
