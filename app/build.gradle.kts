@@ -59,4 +59,5 @@ dependencies {
     implementation (libs.play.services.auth)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (libs.mpandroidchart)
 }
