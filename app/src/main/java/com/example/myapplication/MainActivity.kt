@@ -13,6 +13,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.ui.gallery.GalleryFragment
+import com.example.myapplication.ui.home.HomeFragment
+import com.example.myapplication.ui.slideshow.SlideshowFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,20 +38,38 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val bottomNavView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        val bottomNavView: BottomNavigationView =findViewById(R.id.bottom_navigation);
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-        // Passing each menu ID as a set of IDs because each menu should be considered as top-level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_fav, R.id.nav_trends, R.id.nav_cart), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         bottomNavView.setupWithNavController(navController)
+
+        bottomNavView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_fav -> {
+                    showHomeFragment()
+                    true
+                }
+                R.id.nav_cart-> {
+                    showSavedListFragment()
+                    true
+                }
+                R.id.nav_trends -> {
+                    showChatsListFragment()
+                    true
+                }
+               
+                else -> false
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
@@ -57,4 +78,30 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    private fun showHomeFragment() {
+
+        val homeFragment = GalleryFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_content_main, homeFragment)
+            .commit()
+    }
+
+    private fun showChatsListFragment() {
+      
+        val chatsListFragment =HomeFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_content_main, chatsListFragment)
+            .commit()
+    }
+
+    private fun showSavedListFragment() {
+       
+        val savedListFragment = SlideshowFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_content_main, savedListFragment)
+            .commit()
+    }
+
+  
 }

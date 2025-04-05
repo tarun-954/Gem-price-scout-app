@@ -147,7 +147,7 @@
         android:layout_width="293dp"
         android:layout_height="57dp"
         android:layout_marginTop="56dp"
-        android:allCaps="false"
+
         android:background="@drawable/button_background"
         android:drawableLeft="@drawable/fingerprint_dialog_fp_icon"
         android:drawablePadding="10dp"
