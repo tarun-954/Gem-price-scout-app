@@ -55,9 +55,14 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     implementation (libs.play.services.auth)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.mpandroidchart)
+    implementation(libs.coil)
+    implementation(libs.google.firebase.firestore.ktx)
+    implementation(libs.firebase.messaging)
+
 }

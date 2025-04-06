@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.FragmentGalleryBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class GalleryFragment : Fragment() {
 
@@ -24,14 +26,26 @@ class GalleryFragment : Fragment() {
         val root: View = binding.root
 
         // Access UI components from binding
-        val editText = binding.editTextProductSearch
-        val trackButton = binding.btnTrackProduct
+        val editText = binding.searchBox
+        val trackButton = binding.searchBtn
         val resultText = binding.textResult
 
         // Optional: Observe LiveData if you want
         galleryViewModel.text.observe(viewLifecycleOwner) {
             resultText.text = it
         }
+
+        val searchBox = binding.searchBox
+        val searchBtn = binding.searchBtn
+
+        searchBtn.setOnClickListener {
+            val productLink = searchBox.text.toString()
+            if (productLink.isNotEmpty()) {
+                saveProductToFirebase(productLink)
+            }
+        }
+
+
 
         // Handle click on "Track Product"
         trackButton.setOnClickListener {
@@ -59,4 +73,23 @@ class GalleryFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    // save the product to firebase
+    fun saveProductToFirebase(link: String) {
+        val db = FirebaseFirestore.getInstance()
+        val productData = hashMapOf(
+            "link" to link,
+            "timestamp" to System.currentTimeMillis()
+        )
+        db.collection("tracked_products")
+            .add(productData)
+            .addOnSuccessListener {
+                Toast.makeText(context, "Product saved", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(context, "Error saving product", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+
 }

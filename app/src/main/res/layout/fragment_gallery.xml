@@ -32,7 +32,7 @@
         </TextView>
 
         <EditText
-            android:id="@+id/editTextProductSearch"
+            android:id="@+id/searchBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_bg"
@@ -44,7 +44,8 @@
             android:textColorHint="#888888" />
 
         <Button
-            android:id="@+id/btnTrackProduct"
+            android:id="@+id/searchBtn"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -124,6 +125,7 @@
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/lineChart"
+            android:contentDescription="@string/graphical_analysis"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             />
