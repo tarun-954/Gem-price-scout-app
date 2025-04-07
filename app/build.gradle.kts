@@ -64,5 +64,6 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.google.firebase.firestore.ktx)
     implementation(libs.firebase.messaging)
+    implementation(libs.google.firebase.messaging)
 
 }

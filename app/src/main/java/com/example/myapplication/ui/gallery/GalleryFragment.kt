@@ -35,15 +35,18 @@ class GalleryFragment : Fragment() {
             resultText.text = it
         }
 
-        val searchBox = binding.searchBox
-        val searchBtn = binding.searchBtn
+//        saving the data to fire base
+//         facing some issue on this part
 
-        searchBtn.setOnClickListener {
-            val productLink = searchBox.text.toString()
-            if (productLink.isNotEmpty()) {
-                saveProductToFirebase(productLink)
-            }
-        }
+//        val searchBox = binding.searchBox
+//        val searchBtn = binding.searchBtn
+//
+//        searchBtn.setOnClickListener {
+//            val productLink = searchBox.text.toString()
+//            if (productLink.isNotEmpty()) {
+//                saveProductToFirebase(productLink)
+//            }
+//        }
 
 
 
@@ -75,21 +78,21 @@ class GalleryFragment : Fragment() {
     }
 
     // save the product to firebase
-    fun saveProductToFirebase(link: String) {
-        val db = FirebaseFirestore.getInstance()
-        val productData = hashMapOf(
-            "link" to link,
-            "timestamp" to System.currentTimeMillis()
-        )
-        db.collection("tracked_products")
-            .add(productData)
-            .addOnSuccessListener {
-                Toast.makeText(context, "Product saved", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(context, "Error saving product", Toast.LENGTH_SHORT).show()
-            }
-    }
+//    private fun saveProductToFirebase(link: String) {
+//        val db = FirebaseFirestore.getInstance()
+//        val productData = hashMapOf(
+//            "link" to link,
+//            "timestamp" to System.currentTimeMillis()
+//        )
+//        db.collection("tracked_products")
+//            .add(productData)
+//            .addOnSuccessListener {
+//                Toast.makeText(context, "Product saved", Toast.LENGTH_SHORT).show()
+//            }
+//            .addOnFailureListener {
+//                Toast.makeText(context, "Error saving product", Toast.LENGTH_SHORT).show()
+//            }
+//    }
 
 
 }
