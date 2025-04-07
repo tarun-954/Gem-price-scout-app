@@ -64,6 +64,11 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.google.firebase.firestore.ktx)
     implementation(libs.firebase.messaging)
-    implementation(libs.google.firebase.messaging)
+    implementation (libs.com.google.firebase.firebase.messaging)
+// For OkHttp (API requests)
+    implementation (libs.okhttp)
+
+// For Coroutines
+    implementation (libs.kotlinx.coroutines.android)
 
 }
