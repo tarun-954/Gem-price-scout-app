@@ -102,11 +102,12 @@
                 android:src="@drawable/myntra" />
 
             <ImageView
-                android:layout_width="77dp"
+                android:layout_width="62dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginStart="4dp"
                 android:src="@drawable/ajiologo" />
+
         </LinearLayout>
 
 
@@ -132,8 +133,9 @@
             />
 
 
-    </LinearLayout>
 
+    </LinearLayout>
+<!--    how to integrate live price tracking in amazon in android studio-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
