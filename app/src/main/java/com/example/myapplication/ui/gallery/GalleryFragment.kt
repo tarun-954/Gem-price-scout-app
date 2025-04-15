@@ -18,7 +18,6 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import org.json.JSONObject
-import java.net.URLEncoder
 
 class GalleryFragment : Fragment() {
 
@@ -52,8 +51,9 @@ class GalleryFragment : Fragment() {
                 resultText.text = "Tracking product link..."
 
                 try {
-                    val encodedUrl = URLEncoder.encode(input, "UTF-8")
-                    val apiUrl = "http://192.168.1.104:5000/track?url=$encodedUrl"
+                    // Use raw URL instead of encoded for now
+                    val apiUrl = "http://10.35.136.125:5000/track?url=$input"
+                    // val apiUrl = "http://10.0.2.2:5000/track?url=$input" // ← Use this if testing on emulator
 
                     Log.d("API_CALL", "Calling: $apiUrl")
 
@@ -61,13 +61,19 @@ class GalleryFragment : Fragment() {
                     val stringRequest = StringRequest(
                         Request.Method.GET, apiUrl,
                         { response ->
+                            Log.d("API_RESPONSE", "Response: $response")
                             try {
                                 val json = JSONObject(response)
-                                val title = json.getString("title")
-                                val price = json.getString("price")
+                                val title = json.optString("title", "N/A")
+                                val price = json.optString("price", "N/A")
 
-                                resultText.text = "Title: $title\nPrice: ₹$price"
-                                lineChart.visibility = View.GONE // Hide demo chart if API succeeds
+                                if (title == "N/A" || price == "N/A") {
+                                    resultText.text = "Received null values from API. Showing demo graph..."
+                                    showDemoGraph(lineChart)
+                                } else {
+                                    resultText.text = "Title: $title\nPrice: ₹$price"
+                                    lineChart.visibility = View.GONE
+                                }
                             } catch (e: Exception) {
                                 resultText.text = "Failed to parse result. Showing demo graph..."
                                 e.printStackTrace()
@@ -75,15 +81,17 @@ class GalleryFragment : Fragment() {
                             }
                         },
                         { error ->
-                            resultText.text = "Error: ${error.message}. Showing demo graph..."
-                            error.printStackTrace()
+                            Log.e("API_ERROR", "Error: ${error.message}", error)
+                            resultText.text = "Error: ${error.message ?: "Unknown error"}. Showing demo graph..."
                             showDemoGraph(lineChart)
-                        })
+                        }
+                    )
 
+                    stringRequest.setShouldCache(false) // prevent cached 'null' responses
                     queue.add(stringRequest)
 
                 } catch (e: Exception) {
-                    resultText.text = "Encoding failed: ${e.message}"
+                    resultText.text = "Encoding or request failed: ${e.message}"
                     e.printStackTrace()
                     showDemoGraph(lineChart)
                 }
