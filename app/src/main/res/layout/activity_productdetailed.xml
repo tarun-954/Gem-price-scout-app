@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Productdetailed">
+
+    <!-- Greeting Text -->
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/loralnew"
+        android:text="Hi User,"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Search Icon -->
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="24dp"
+
+        android:layout_height="24dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="Search"
+        android:src="@drawable/user"
+        app:layout_constraintEnd_toStartOf="@+id/cartIcon"
+        app:layout_constraintStart_toEndOf="@+id/greetingText"
+        app:layout_constraintTop_toTopOf="@id/greetingText" />
+
+    <!-- Cart Icon -->
+    <ImageView
+        android:id="@+id/cartIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/bagcart"
+    android:contentDescription="Cart"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@id/greetingText"
+    android:layout_marginEnd="16dp"/>
+
+    <!-- Promo Banner -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/promoBanner"
+        android:layout_width="364dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#24623D"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greetingText">
+
+        <TextView
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+android:layout_margin="10dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Get 20% Off\nfor all Items"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="promo code : TARUN100"
+            android:textColor="#BCBABA"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            >
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="165dp"
+            android:layout_height="116dp"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:src="@drawable/heart">
+
+        </ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Category Filters -->
+    <HorizontalScrollView
+        android:id="@+id/categoryScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/promoBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/categoryFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingEnd="8dp">
+
+            <Button
+                android:id="@+id/allButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="All"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/necklacesButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Necklaces"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/earringsButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Earrings"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/ringsButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rings"
+                android:backgroundTint="@color/white"
+                android:elevation="4dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Product Grid -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gemRecyclerView"
+        android:layout_width="411dp"
+        android:layout_height="441dp"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryScroll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

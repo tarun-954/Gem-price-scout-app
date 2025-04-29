@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.volley)
+    implementation(libs.play.services.analytics.impl)
     testImplementation(libs.junit)
     implementation (libs.play.services.auth)
     androidTestImplementation(libs.androidx.junit)
@@ -66,10 +67,28 @@ dependencies {
     implementation(libs.google.firebase.firestore.ktx)
     implementation(libs.firebase.messaging)
     implementation (libs.com.google.firebase.firebase.messaging)
+
+    implementation(libs.glide)
+    annotationProcessor(libs.glide.compiler)
+    implementation(libs.recyclerview)
+    implementation(libs.cardview)
+
+
+    implementation(libs.work.runtime.ktx)
+
 // For OkHttp (API requests)
     implementation (libs.okhttp)
 
 // For Coroutines
     implementation (libs.kotlinx.coroutines.android)
+
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.scalars)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation (libs.material.v1110)
+
 
 }

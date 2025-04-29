@@ -32,7 +32,7 @@ class SignupActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val signInButton: SignInButton = findViewById(R.id.google_sign_in_button)
+        val signInButton: SignInButton = findViewById(R.id.button)
         signInButton.setOnClickListener {
             signIn()
         }

@@ -55,8 +55,8 @@
         android:hint="Email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:endIconMode="custom"
-        app:endIconTintMode="screen"
-        app:endIconDrawable="@android:drawable/checkbox_on_background"
+
+        app:endIconDrawable="@drawable/correct"
         app:startIconDrawable="@android:drawable/sym_action_email"
         app:boxStrokeWidth="2dp"
         app:boxCornerRadiusTopStart="16dp"
@@ -73,8 +73,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:textSize="16sp"
-            android:paddingStart="50dp"
-            />
+            android:paddingStart="50dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Input -->
@@ -133,13 +132,16 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <!-- Divider Line with Text -->
+
     <View
+
         android:id="@+id/line1"
         android:layout_width="0dp"
         android:layout_height="1dp"
@@ -179,36 +181,34 @@
         android:layout_width="322dp"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
-
-        android:allCaps="false"
         android:background="@drawable/button_background"
+        android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/googlesymbol"
-
         android:gravity="center"
         android:padding="10dp"
+        android:textColor="#5F6368"
         android:paddingStart="20dp"
         android:text="Continue with Google"
-        android:textColor="#5F6368"
+
         android:textSize="14sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orText" />
 
     <!-- Gmail Sign-In Button -->
-
-    <!-- Bottom Sign-up Text -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/gmailSignInButton"
         android:layout_width="321dp"
         android:layout_height="56dp"
+        android:textAllCaps="false"
         android:layout_marginTop="12dp"
-        android:allCaps="false"
         android:background="@drawable/button_background"
         android:drawableLeft="@drawable/envelope"
-
         android:gravity="center"
         android:padding="10dp"
         android:paddingStart="20dp"
+
         android:text="Continue with Gmail"
         android:textColor="#5F6368"
         android:textSize="14sp"
@@ -217,6 +217,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/googleSignInButton" />
 
+    <!-- Bottom Sign-up Text -->
     <TextView
         android:id="@+id/signupText"
         android:layout_width="wrap_content"
