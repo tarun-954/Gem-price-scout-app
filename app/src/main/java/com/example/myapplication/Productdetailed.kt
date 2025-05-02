@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 //import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
+import android.content.Intent
 //import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,6 +22,11 @@ class Productdetailed : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_productdetailed)
 
+            val searchIcon: ImageView = findViewById(R.id.searchIcon) // Use the actual ID of your search image
+            searchIcon.setOnClickListener {
+                val intent = Intent(this, SignIn::class.java)
+                startActivity(intent)
+
             gemRecyclerView = findViewById(R.id.gemRecyclerView)
             gemRecyclerView.layoutManager = GridLayoutManager(this, 2)
 
@@ -33,7 +39,7 @@ class Productdetailed : AppCompatActivity() {
             // Schedule price alert for "Ruby"
             schedulePriceCheck(this, gemName = "Ruby", alertPrice = 60.0f)
         }
-
+        }
         private fun schedulePriceCheck(context: Context, gemName: String, alertPrice: Float) {
             val work = PeriodicWorkRequestBuilder<PriceCheckWorker>(15, TimeUnit.MINUTES)
                 .setInputData(
@@ -50,7 +56,7 @@ class Productdetailed : AppCompatActivity() {
                 work
             )
         }
-    }
+}
 
 
 
